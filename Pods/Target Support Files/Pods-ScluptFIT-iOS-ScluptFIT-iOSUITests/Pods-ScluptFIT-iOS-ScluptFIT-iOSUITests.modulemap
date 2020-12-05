@@ -1,0 +1,6 @@
+framework module Pods_ScluptFIT_iOS_ScluptFIT_iOSUITests {
+  umbrella header "Pods-ScluptFIT-iOS-ScluptFIT-iOSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
