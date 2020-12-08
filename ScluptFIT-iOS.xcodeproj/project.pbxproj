@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		118E98E7257C3B4B00AC8381 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E98E6257C3B4B00AC8381 /* Run.swift */; };
 		118E98F4257C414300AC8381 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E98F3257C414300AC8381 /* TabbarViewController.swift */; };
+		2D320635257C621F00817BE4 /* WebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D320634257C621F00817BE4 /* WebServiceRequest.swift */; };
 		2D67CF6F257BC80F00292EC3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67CF6E257BC80F00292EC3 /* Post.swift */; };
 		2D67CF74257BC9CE00292EC3 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67CF73257BC9CE00292EC3 /* Comment.swift */; };
 		2D67CF7A257BCC8E00292EC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67CF79257BCC8E00292EC3 /* Constants.swift */; };
@@ -17,7 +18,6 @@
 		2D67CF8D257BCD9200292EC3 /* ExerciceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67CF8C257BCD9200292EC3 /* ExerciceService.swift */; };
 		2D812A47256ED925003720B7 /* RunningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D812A46256ED925003720B7 /* RunningController.swift */; };
 		2D814889257BD1D6006BCC60 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D814888257BD1D6006BCC60 /* Activity.swift */; };
-		6F03D61A257C519000159637 /* WebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F03D619257C519000159637 /* WebServiceRequest.swift */; };
 		6F0DE290256D4423000E25FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DE28F256D4423000E25FB /* AppDelegate.swift */; };
 		6F0DE292256D4423000E25FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DE291256D4423000E25FB /* SceneDelegate.swift */; };
 		6F0DE294256D4423000E25FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DE293256D4423000E25FB /* ViewController.swift */; };
@@ -67,6 +67,7 @@
 		118E98E6257C3B4B00AC8381 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		118E98F3257C414300AC8381 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		215250786A81759F6274A5D4 /* Pods-ScluptFIT-iOS-ScluptFIT-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScluptFIT-iOS-ScluptFIT-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-ScluptFIT-iOS-ScluptFIT-iOSUITests/Pods-ScluptFIT-iOS-ScluptFIT-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2D320634257C621F00817BE4 /* WebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServiceRequest.swift; path = ../../../WebServiceRequest.swift; sourceTree = "<group>"; };
 		2D67CF6E257BC80F00292EC3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2D67CF73257BC9CE00292EC3 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		2D67CF79257BCC8E00292EC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		2D812A46256ED925003720B7 /* RunningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningController.swift; sourceTree = "<group>"; };
 		2D814888257BD1D6006BCC60 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		6DCDFD34A3EA9858E8FB41CD /* Pods-ScluptFIT-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScluptFIT-iOS.release.xcconfig"; path = "Target Support Files/Pods-ScluptFIT-iOS/Pods-ScluptFIT-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		6F03D619257C519000159637 /* WebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServiceRequest.swift; path = ../../../WebServiceRequest.swift; sourceTree = "<group>"; };
 		6F0DE28C256D4423000E25FB /* ScluptFIT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScluptFIT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0DE28F256D4423000E25FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F0DE291256D4423000E25FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		2D67CF78257BCBB800292EC3 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				6F03D619257C519000159637 /* WebServiceRequest.swift */,
+				2D320634257C621F00817BE4 /* WebServiceRequest.swift */,
 				2D67CF79257BCC8E00292EC3 /* Constants.swift */,
 			);
 			path = utils;
@@ -513,7 +513,7 @@
 				6FE98306257BCB26003F7830 /* Exercice.swift in Sources */,
 				6F0DE2D7256D8721000E25FB /* SignupStep1Controller.swift in Sources */,
 				6F0DE29A256D4423000E25FB /* ScluptFIT_iOS.xcdatamodeld in Sources */,
-				6F03D61A257C519000159637 /* WebServiceRequest.swift in Sources */,
+				2D320635257C621F00817BE4 /* WebServiceRequest.swift in Sources */,
 				2D67CF8D257BCD9200292EC3 /* ExerciceService.swift in Sources */,
 				2D67CF74257BC9CE00292EC3 /* Comment.swift in Sources */,
 				6F0DE2EF256D92BD000E25FB /* MenuController.swift in Sources */,

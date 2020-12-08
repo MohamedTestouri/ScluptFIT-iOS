@@ -572,20 +572,33 @@
                                     <segue destination="Rtp-eC-axi" kind="showDetail" id="5zI-xa-aTh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtZ-FZ-EBu">
+                                <rect key="frame" x="141" y="94" width="133" height="84"/>
+                                <color key="backgroundColor" name="Color Primary"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="8b2-Bz-qA1" eventType="touchUpInside" id="2cG-dr-qqf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pul-nm-bka"/>
                         <color key="backgroundColor" name="Color Background"/>
                         <constraints>
+                            <constraint firstItem="pul-nm-bka" firstAttribute="trailing" secondItem="CtZ-FZ-EBu" secondAttribute="trailing" constant="140" id="1yM-AJ-pL5"/>
                             <constraint firstItem="pul-nm-bka" firstAttribute="trailing" secondItem="6gk-YK-hAk" secondAttribute="trailing" constant="57" id="Kvg-Ed-EWN"/>
+                            <constraint firstItem="6gk-YK-hAk" firstAttribute="top" secondItem="CtZ-FZ-EBu" secondAttribute="bottom" constant="417" id="Vja-RZ-rdi"/>
+                            <constraint firstItem="CtZ-FZ-EBu" firstAttribute="top" secondItem="pul-nm-bka" secondAttribute="top" constant="94" id="cfo-8x-VeA"/>
                             <constraint firstItem="6gk-YK-hAk" firstAttribute="leading" secondItem="pul-nm-bka" secondAttribute="leading" constant="57" id="d0F-ea-FPs"/>
+                            <constraint firstItem="CtZ-FZ-EBu" firstAttribute="leading" secondItem="pul-nm-bka" secondAttribute="leading" constant="141" id="dbf-UE-MSE"/>
                             <constraint firstItem="pul-nm-bka" firstAttribute="bottom" secondItem="6gk-YK-hAk" secondAttribute="bottom" constant="32" id="sK7-ty-Ohe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Running" image="ic_runnig" id="uAS-59-u2F"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2s-rd-aPr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="8b2-Bz-qA1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="141" y="1602"/>
+            <point key="canvasLocation" x="140.57971014492756" y="1601.9021739130435"/>
         </scene>
         <!--Fitness Controller-->
         <scene sceneID="A8u-Kq-Eu3">

@@ -10,9 +10,21 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Alamofire
 
 class RunningController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    
+    var postService = PostService()
 
+    //let headers = ["Content-Type" : "application/json"]
+    @IBAction func test(_ sender: Any) {
+      //  Alamofire.request("http:/sclupt-fit.herokuapp.com/posts", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate().responseJSON{
+        //    (response) in    print("response: ", response)
+            
+   // }
+        self.postService.getAllPosts()
+    }
+    
     @IBOutlet weak var mapView: MKMapView!
     let locationManager: CLLocationManager = CLLocationManager()
     override func viewDidLoad() {
@@ -34,5 +46,6 @@ class RunningController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.showsUserLocation = true
         mapView.isZoomEnabled = true
 
-    }
+    
+}
 }

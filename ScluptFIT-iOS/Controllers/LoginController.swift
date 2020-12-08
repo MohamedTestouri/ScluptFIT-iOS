@@ -16,7 +16,7 @@ class LoginController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     
 
-    var parameters : [String: Any] = [:]
+    var parameters : [String: Any] = [:]	
     var webServiceRequest = WebServiceRequest()
     
     override func viewDidLoad() {
@@ -47,11 +47,16 @@ class LoginController: UIViewController,UITextFieldDelegate {
         
         //DataResponse<User>
 
-        Alamofire.request(serverUrl2, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+        //Alamofire.request(serverUrl2, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: //headers).validate().responseJSON { (response) in
                 
-                print("response", response)
+              //  print("response", response)
             
-             }
+             //}
+        Alamofire.request("http://sclupt-fit.herokuapp.com/posts", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate().responseJSON{
+            (response) in
+            print("hello world")
+            print("response: ", response)
+    }
         
       
             
