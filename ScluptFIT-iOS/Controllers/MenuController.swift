@@ -66,15 +66,18 @@ class FitnessMenuController: UIViewController,UITableViewDataSource,UITableViewD
     let data=["abdo","bras","choulder","dos","jambe","poitrine"]
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return arr_sortie_email.count
+        //return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mCell")
         let contview = cell?.contentView
         let img = contview?.viewWithTag(1) as! UIImageView
+        let label = contview?.viewWithTag(2) as! UILabel
 
         img.image = UIImage(named: data[indexPath.row])
+        label.text = arr_sortie_email[indexPath.row]
     
         return cell!
     }
@@ -90,30 +93,151 @@ class FitnessMenuController: UIViewController,UITableViewDataSource,UITableViewD
         destination.name = exercice
     }
     
+    var arr_sortie_email = [String]()
+    var arr_sortie_fullname = [String]()
+    var arr_sortie_phone = [String]()
+    let URL_USER_SORTIE = "https://sclupt-fit.herokuapp.com/users/find/";
+    @IBOutlet weak var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.table.delegate = self
+        self.table.dataSource = self
+        
+        Alamofire.request(URL_USER_SORTIE, method: .get).responseJSON
+            {
+                
+                response in
+                switch response.result{
+                case .success:
+                    print(response.result)
+                    
+                    let result = try? JSON(data: response.data!)
+                    //   print(result)
+                    self.arr_sortie_email.removeAll()
+                    self.arr_sortie_fullname.removeAll()
+                    self.arr_sortie_phone.removeAll()
+                    
+                    for i in result!.arrayValue{
+                        //print(i)
+                        let sortie_email = i["email"].stringValue
+                        self.arr_sortie_email.append(sortie_email)
+                        let sortie_fullname = i["fullName"].stringValue
+                        self.arr_sortie_fullname.append(sortie_fullname)
+                        let sortie_phone = i["phone"].stringValue
+                        self.arr_sortie_phone.append(sortie_phone)
+                        
+                    }
+                    
+                    
+                    self.table.reloadData()
+                    
+                    
+                    break
+                    
+                case .failure:
+                    
+                    print(response.error!)
+                    break
+                    
+                }
+                
+        }
+        
+        
+    }
         
     
         
         
     }
+
+
+
+
+class RunningMenuController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return arr_sortie_email.count
+
+        
+    }
     
-}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mcell")
+        let contview = cell?.contentView
+        let label = contview?.viewWithTag(1) as! UILabel
 
+        label.text = arr_sortie_email[indexPath.row]
+    
+        return cell!
+        
+    }
+    
+    var arr_sortie_email = [String]()
+    var arr_sortie_fullname = [String]()
+    var arr_sortie_phone = [String]()
+    let URL_USER_SORTIE = "https://sclupt-fit.herokuapp.com/users/find/";
 
-class RunningMenuController: UIViewController {
-
+    @IBOutlet weak var table: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let params = [ "email": "user.email@email.com",
+       /* let params = [ "email": "user.email@email.com",
                       "password": "user.password",
                       "fullName" : "user.fullName",
                       "sexe" :"male",
                       "phone" : 22252225       ] as [String : Any]
-        Alamofire.request("https://sclupt-fit.herokuapp.com/users/signup", method: .post, parameters: params as Parameters).responseJSON{(response) in print("response: ", response)}
+        Alamofire.request("https://sclupt-fit.herokuapp.com/users/signup", method: .post, parameters: params as Parameters).responseJSON{(response) in print("response: ", response)}*/
         // Do any additional setup after loading the view.
+        
+        self.table.delegate = self
+        self.table.dataSource = self
+        
+        Alamofire.request(URL_USER_SORTIE, method: .get).responseJSON
+            {
+                
+                response in
+                switch response.result{
+                case .success:
+                    print(response.result)
+                    
+                    let result = try? JSON(data: response.data!)
+                    //   print(result)
+                    self.arr_sortie_email.removeAll()
+                    self.arr_sortie_fullname.removeAll()
+                    self.arr_sortie_phone.removeAll()
+                    
+                    for i in result!.arrayValue{
+                        //print(i)
+                        let sortie_email = i["email"].stringValue
+                        self.arr_sortie_email.append(sortie_email)
+                        let sortie_fullname = i["fullName"].stringValue
+                        self.arr_sortie_fullname.append(sortie_fullname)
+                        let sortie_phone = i["phone"].stringValue
+                        self.arr_sortie_phone.append(sortie_phone)
+                        
+                    }
+                    
+                    
+                    self.table.reloadData()
+                    
+                    
+                    break
+                    
+                case .failure:
+                    
+                    print(response.error!)
+                    break
+                    
+                }
+                
+        }
+        
+        
     }
     
 }
