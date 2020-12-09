@@ -243,12 +243,82 @@ class RunningMenuController: UIViewController, UITableViewDelegate, UITableViewD
 }
 
 
-class ForumMenuController: UIViewController {
+class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arr_sortie_email.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mcell")
+        let contview = cell?.contentView
+        let img = contview?.viewWithTag(1) as! UIImageView
+        let label = contview?.viewWithTag(2) as! UILabel
 
+        img.image = UIImage(named: data[indexPath.row])
+        label.text = arr_sortie_email[indexPath.row]
+    
+        return cell!
+        
+    }
+    
+    
+    let data=["abdo","bras","choulder","dos","jambe","poitrine"]
+    var arr_sortie_email = [String]()
+    var arr_sortie_fullname = [String]()
+    var arr_sortie_phone = [String]()
+    let URL_USER_SORTIE = "https://sclupt-fit.herokuapp.com/users/find/";
+    @IBOutlet weak var table: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.table.delegate = self
+        self.table.dataSource = self
+        
+        Alamofire.request(URL_USER_SORTIE, method: .get).responseJSON
+            {
+                
+                response in
+                switch response.result{
+                case .success:
+                    print(response.result)
+                    
+                    let result = try? JSON(data: response.data!)
+                    //   print(result)
+                    self.arr_sortie_email.removeAll()
+                    self.arr_sortie_fullname.removeAll()
+                    self.arr_sortie_phone.removeAll()
+                    
+                    for i in result!.arrayValue{
+                        //print(i)
+                        let sortie_email = i["email"].stringValue
+                        self.arr_sortie_email.append(sortie_email)
+                        let sortie_fullname = i["fullName"].stringValue
+                        self.arr_sortie_fullname.append(sortie_fullname)
+                        let sortie_phone = i["phone"].stringValue
+                        self.arr_sortie_phone.append(sortie_phone)
+                        
+                    }
+                    
+                    
+                    self.table.reloadData()
+                    
+                    
+                    break
+                    
+                case .failure:
+                    
+                    print(response.error!)
+                    break
+                    
+                }
+                
+        }
+        
+        
     }
     
 }
