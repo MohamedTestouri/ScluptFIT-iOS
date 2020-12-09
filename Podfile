@@ -6,6 +6,7 @@ target 'ScluptFIT-iOS' do
   use_frameworks! 
   pod 'Alamofire'
   pod 'AlamofireObjectMapper', '~> 5.2'
+pod'SwiftyJSON'
 
   # Pods for ScluptFIT-iOS
 

@@ -5,46 +5,31 @@
 //  Created by wassim sefi  on 12/4/20.
 //
 
-import ObjectMapper
+import UIKit
 
-class User: NSObject, Mappable {
+class User: Codable {
     
     var idUser: String?
     var password: String?
-    var email:String?
-    var fullName:String?
+    var email:String
+    var fullName:String
     var phone:Int!
     var sexe:String?
 
     var birthday:String?
-    var healthInformationArryList: Array<HealthInformation>=Array()
-    var runArryList: Array<Run>=Array()
-    var activityArryList: Array<Activity>=Array()
+    //var healthInformationArryList: Array<HealthInformation>=Array()
+    //var runArryList: Array<Run>=Array()
+    //var activityArryList: Array<Activity>=Array()
 
 
-    override init() {
-        super.init()
+    init(email : String,password : String,fullName : String,sexe : String,phone : Int) {
+    
+        self.email = email
+        self.password = password
+        self.fullName = fullName
+        self.sexe = sexe
+        self.phone = phone
+       
+        
     }
-
-        convenience required init?(map: Map) {
-        self.init()
-    }
-
-      // Mappable
-      public func mapping(map: Map) {
-
-        idUser    <- map["_id"]
-        email    <- map["email"]
-        password    <- map["password"]
-        fullName    <- map["fullName"]
-        phone    <- map["phone"]
-        sexe    <- map["sexe"]
-        birthday    <- map["birthday"]
-        healthInformationArryList    <- map["healthInformation"]
-        runArryList    <- map["runs"]
-        activityArryList    <- map["activities"]
-
-
-      }
-  
 }

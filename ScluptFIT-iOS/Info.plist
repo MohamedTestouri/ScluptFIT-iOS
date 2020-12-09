@@ -5,7 +5,10 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your f*cking location</string>
 	<key>NSAppTransportSecurity</key>
-	<dict/>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>CFBundleDisplayName</key>
 	<string>SclutpFIT</string>
 	<key>CFBundleExecutable</key>

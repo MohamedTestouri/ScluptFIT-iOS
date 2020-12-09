@@ -160,8 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				2D67CF82257BCD7100292EC3 /* UserService.swift */,
-				2D67CF87257BCD8100292EC3 /* PostService.swift */,
 				2D67CF8C257BCD9200292EC3 /* ExerciceService.swift */,
+				2D67CF87257BCD8100292EC3 /* PostService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
