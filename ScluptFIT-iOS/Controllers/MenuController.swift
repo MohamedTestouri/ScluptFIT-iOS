@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Alamofire
 
 class MenuController: UIViewController {
 
@@ -105,7 +106,12 @@ class RunningMenuController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let params = [ "email": "user.email@email.com",
+                      "password": "user.password",
+                      "fullName" : "user.fullName",
+                      "sexe" :"male",
+                      "phone" : 22252225       ] as [String : Any]
+        Alamofire.request("https://sclupt-fit.herokuapp.com/users/signup", method: .post, parameters: params as Parameters).responseJSON{(response) in print("response: ", response)}
         // Do any additional setup after loading the view.
     }
     

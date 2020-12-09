@@ -22,11 +22,12 @@ class UserService{
                       "birthday" : user.birthday,
                       "sexe" : user.sexe,
                       "phone" : user.phone        ] as [String : Any]
-        Alamofire.request(Constants.API_URL+"/user/signup", method: .post, parameters: params as Parameters, encoding: JSONEncoding.default, headers: Constants.Headers).validate().responseJSON{(response) in print("response: ", response)}
+        Alamofire.request(Constants.API_URL+"/users/signup", method: .post, parameters: params as Parameters).responseJSON{(response) in print("response: ", response)}
     }
     
     //Get
-    func getUser(idUser : String) {
+    func getUser(idUser : String){
+        
         Alamofire.request(Constants.API_URL+"/users/find/\(idUser)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Constants.Headers).validate().responseJSON{ (response) in
     print("response: ", response)
         

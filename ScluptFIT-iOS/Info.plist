@@ -4,6 +4,8 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your f*cking location</string>
+	<key>NSAppTransportSecurity</key>
+	<dict/>
 	<key>CFBundleDisplayName</key>
 	<string>SclutpFIT</string>
 	<key>CFBundleExecutable</key>
@@ -55,11 +57,6 @@
 				</dict>
 			</array>
 		</dict>
-	</dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
