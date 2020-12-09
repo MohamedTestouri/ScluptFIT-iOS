@@ -324,9 +324,9 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
 }
 
 
-class ProfileMenuController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ProfileMenuController: UIViewController/*, UITableViewDelegate, UITableViewDataSource*/{
    
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      /*  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             
             return arr_sortie_email.count
         }
@@ -341,21 +341,25 @@ class ProfileMenuController: UIViewController, UITableViewDelegate, UITableViewD
             return cell!
         }
         
-        
-        var arr_sortie_email = [String]()
-        var arr_sortie_fullname = [String]()
-        var arr_sortie_phone = [String]()
-        let URL_USER_SORTIE = "https://sclupt-fit.herokuapp.com/users/find/";
+        */
+       // var arr_sortie_email = [String]()
+        //var arr_sortie_fullname = [String]()
+        //var arr_sortie_phone = [String]()
+        let URL_USER_SORTIE = "https://sclupt-fit.herokuapp.com/users/find/5fcaa6fe55106324acdfdfce";
         
        
         
-        
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var telephone: UILabel!
+    
+    @IBOutlet weak var sexe: UILabel!
+    @IBOutlet weak var email: UILabel!
+    // @IBOutlet weak var table: UITableView!
     override func viewDidLoad() {
             super.viewDidLoad()
             
-            self.table.delegate = self
-            self.table.dataSource = self
+          //  self.table.delegate = self
+          //  self.table.dataSource = self
             
             Alamofire.request(URL_USER_SORTIE, method: .get).responseJSON
                 {
@@ -367,23 +371,25 @@ class ProfileMenuController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         let result = try? JSON(data: response.data!)
                         //   print(result)
-                        self.arr_sortie_email.removeAll()
-                        self.arr_sortie_fullname.removeAll()
-                        self.arr_sortie_phone.removeAll()
+                       // self.arr_sortie_email.removeAll()
+                        //self.arr_sortie_fullname.removeAll()
+                        //self.arr_sortie_phone.removeAll()
                         
-                        for i in result!.arrayValue{
+                        
                             //print(i)
-                            let sortie_email = i["email"].stringValue
-                            self.arr_sortie_email.append(sortie_email)
-                            let sortie_fullname = i["fullName"].stringValue
-                            self.arr_sortie_fullname.append(sortie_fullname)
-                            let sortie_phone = i["phone"].stringValue
-                            self.arr_sortie_phone.append(sortie_phone)
+                            let sortie_email = result!["email"].stringValue
+                        self.email?.text?.append(sortie_email)
+                            let sortie_fullname = result!["fullName"].stringValue
+                        self.name.text?.append(sortie_fullname )
+                        let sortie_phone = result!["phone"].stringValue
+                        self.telephone.text?.append(sortie_phone)
+                        let sortie_sexe = result!["sexe"].stringValue
+                        self.sexe.text?.append(sortie_sexe)
                             
-                        }
+                    
                         
                         
-                        self.table.reloadData()
+                       // self.table.reloadData()
                         
                         
                         break
@@ -397,8 +403,17 @@ class ProfileMenuController: UIViewController, UITableViewDelegate, UITableViewD
                     
             }
             
-            
+       
+        
+        
+    
+
         }
+    
+    
+
+    
+    
     }
     
 
