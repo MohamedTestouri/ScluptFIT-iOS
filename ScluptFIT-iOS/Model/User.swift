@@ -11,8 +11,8 @@ class User: Codable {
     
     var idUser: String?
     var password: String?
-    var email:String
-    var fullName:String
+    var email:String?
+    var fullName:String?
     var phone:Int!
     var sexe:String?
 
@@ -20,7 +20,11 @@ class User: Codable {
     //var healthInformationArryList: Array<HealthInformation>=Array()
     //var runArryList: Array<Run>=Array()
     //var activityArryList: Array<Activity>=Array()
-
+ 
+    init(email: String, password: String){
+        self.email = email
+        self.password = password
+    }
 
     init(email : String,password : String,fullName : String,sexe : String,phone : Int) {
     

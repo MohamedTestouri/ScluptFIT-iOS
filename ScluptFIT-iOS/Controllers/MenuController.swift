@@ -170,7 +170,7 @@ class RunningMenuController: UIViewController, UITableViewDelegate, UITableViewD
             let contview = cell?.contentView
             let date = contview?.viewWithTag(1) as! UILabel
             let duration = contview?.viewWithTag(2) as! UILabel
-            let distance = contview?.viewWithTag(2) as! UILabel
+            let distance = contview?.viewWithTag(3) as! UILabel
             date.text = arr_date[indexPath.row]
             duration.text = arr_duration[indexPath.row]
             distance.text = arr_distance[indexPath.row]
@@ -196,24 +196,31 @@ class RunningMenuController: UIViewController, UITableViewDelegate, UITableViewD
                         response in
                         switch response.result{
                         case .success:
-                            print(response.result)
+                           // print(response.result)
                             
                             let result = try? JSON(data: response.data!)
-                            //   print(result)
+                            //print(result)
                             self.arr_date.removeAll()
                             self.arr_duration.removeAll()
                             self.arr_distance.removeAll()
                             
-                            for i in result!.arrayValue{
-                                //print(i)
-                                let sortie_date = i["runs"]["date"].stringValue
+
+                            let sortie_runs=result!["runs"].arrayValue
+                            
+                            
+                            for i in sortie_runs{
+                                print("array runs :")
+                                print(i)
+                                let sortie_date = i["date"].stringValue
                                 self.arr_date.append(sortie_date)
-                                let sortie_duration = i["runs"]["duration"].stringValue
+                                let sortie_duration = i["duration"].stringValue
                                 self.arr_duration.append(sortie_duration)
-                                let sortie_distance = i["phone"]["distance"].stringValue
+                                let sortie_distance = i["distance"].stringValue
                                 self.arr_distance.append(sortie_distance)
                                 
                             }
+                            
+                           
                             
                             
                             self.table.reloadData()
@@ -332,14 +339,14 @@ class ProfileMenuController: UIViewController/*, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
             super.viewDidLoad()
             Alamofire.request(URL_USER_SORTIE, method: .get).responseJSON
-                {                                        response in
+                {response in
                     switch response.result{
                     case .success:
                         print(response.result)
-                                               let result = try? JSON(data: response.data!)
-                           let sortie_email = result!["email"].stringValue
+                        let result = try? JSON(data: response.data!)
+                        let sortie_email = result!["email"].stringValue
                         self.email?.text?.append(sortie_email)
-                            let sortie_fullname = result!["fullName"].stringValue
+                        let sortie_fullname = result!["fullName"].stringValue
                         self.name.text?.append(sortie_fullname )
                         let sortie_phone = result!["phone"].stringValue
                         self.telephone.text?.append(sortie_phone)
