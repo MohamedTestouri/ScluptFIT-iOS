@@ -161,14 +161,14 @@ class FitnessMenuController: UIViewController,UITableViewDataSource,UITableViewD
 class RunningMenuController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return arr_date.count
+            return arr_distance.count
             //return data.count
         }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "mcell")
             let contview = cell?.contentView
-            let date = contview?.viewWithTag(1) as! UILabel
+            let date = contview?.viewWithTag(4) as! UILabel
             let duration = contview?.viewWithTag(2) as! UILabel
             let distance = contview?.viewWithTag(3) as! UILabel
             date.text = arr_date[indexPath.row]
@@ -205,10 +205,10 @@ class RunningMenuController: UIViewController, UITableViewDelegate, UITableViewD
                             self.arr_distance.removeAll()
                             
 
-                            let sortie_runs=result!["runs"].arrayValue
+                            let sortie_runs=result!["runs"]
                             
                             
-                            for i in sortie_runs{
+                            for i in sortie_runs.arrayValue{
                                 print("array runs :")
                                 print(i)
                                 let sortie_date = i["date"].stringValue
