@@ -244,17 +244,16 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "mcell")
         let contview = cell?.contentView
-      //  let img = contview?.viewWithTag(1) as! UIImageView
+        
         let name = contview?.viewWithTag(2) as! UILabel
         let date = contview?.viewWithTag(3) as! UILabel
         let text = contview?.viewWithTag(4) as! UITextView
-      //  let like = contview?.viewWithTag(5) as! UILabel
+        let likes = contview?.viewWithTag(5) as! UILabel
         
 
-       // img.image = UIImage(named: data[indexPath.row])
-       // name.text = arr_sortie_name[indexPath.row]
         date.text = arr_sortie_date[indexPath.row]
         text.text = arr_sortie_text[indexPath.row]
+        likes.text = arr_sortie_likes[indexPath.row]
     
         return cell!
         
@@ -264,6 +263,7 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
     var arr_sortie_name = [String]()
     var arr_sortie_date = [String]()
     var arr_sortie_text = [String]()
+    var arr_sortie_likes = [String]()
     let URL_USER_SORTIE = "https://sclupt-fit.herokuapp.com/posts";
     
     
@@ -288,6 +288,7 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.arr_sortie_text.removeAll()
                     self.arr_sortie_name.removeAll()
                     self.arr_sortie_date.removeAll()
+                    self.arr_sortie_likes.removeAll()
                     
                     for i in result!.arrayValue{
                         //print(i)
@@ -297,6 +298,8 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.arr_sortie_name.append(sortie_name)
                         let sortie_date = i["date"].stringValue
                         self.arr_sortie_date.append(sortie_date)
+                        let sortie_likes = i["likes"].stringValue
+                        self.arr_sortie_likes.append(sortie_likes)
                         
                     }
                     
