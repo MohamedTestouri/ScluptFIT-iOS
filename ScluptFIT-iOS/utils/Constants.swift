@@ -12,4 +12,5 @@ public class Constants {
 
 static var API_URL:String = "https://sclupt-fit.herokuapp.com"
     static var Headers = ["Content-Type" : "application/json"]
+    static var post:String = "http://sclupt-fit.herokuapp.com/posts"
 }
