@@ -266,13 +266,35 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell!
         
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "detailsegue", sender: indexPath)
+  
+        print(indexPath)
     
-    
+    }
+   
     var arr_sortie_name = [String]()
     var arr_sortie_date = [String]()
     var arr_sortie_text = [String]()
     let URL_USER_SORTIE = "https://sclupt-fit.herokuapp.com/posts";
     
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+      {
+     
+          if (segue.identifier == "detailsegue")
+          {
+              let indexPath = sender as! IndexPath
+              let indice = indexPath.row
+            print(indice)
+            
+            let animal = arr_sortie_date[indice]
+        print(animal)
+              let homeSegue = segue.destination as! DetailViewController
+            homeSegue.post = animal
+            
+            
+          }
+      }*/
     
     @IBOutlet weak var table: UITableView!
     override func viewDidLoad() {
@@ -307,7 +329,8 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
                         
                     }
                     
-                    
+                    print("waaawww")
+                    print(result!.arrayValue[0])
                     self.table.reloadData()
                     
                     
@@ -324,6 +347,7 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
     }
+    
     
 }
 

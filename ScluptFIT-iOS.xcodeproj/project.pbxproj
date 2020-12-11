@@ -34,6 +34,7 @@
 		6F0DE2E1256D8791000E25FB /* SignupStep3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DE2E0256D8791000E25FB /* SignupStep3Controller.swift */; };
 		6F0DE2E7256D882F000E25FB /* SignupDoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DE2E6256D882F000E25FB /* SignupDoneController.swift */; };
 		6F0DE2EF256D92BD000E25FB /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DE2EE256D92BD000E25FB /* MenuController.swift */; };
+		6F6618A7258395FF0000FDEE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6618A6258395FF0000FDEE /* DetailViewController.swift */; };
 		6FE982EC257A95C3003F7830 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE982EB257A95C3003F7830 /* User.swift */; };
 		6FE982F7257BC622003F7830 /* HealthInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE982F6257BC622003F7830 /* HealthInformation.swift */; };
 		6FE98306257BCB26003F7830 /* Exercice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE98305257BCB26003F7830 /* Exercice.swift */; };
@@ -99,6 +100,7 @@
 		6F0DE2E0256D8791000E25FB /* SignupStep3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep3Controller.swift; sourceTree = "<group>"; };
 		6F0DE2E6256D882F000E25FB /* SignupDoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDoneController.swift; sourceTree = "<group>"; };
 		6F0DE2EE256D92BD000E25FB /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		6F6618A6258395FF0000FDEE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6FE982EB257A95C3003F7830 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6FE982F6257BC622003F7830 /* HealthInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInformation.swift; sourceTree = "<group>"; };
 		6FE98305257BCB26003F7830 /* Exercice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercice.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				6F0DE2EE256D92BD000E25FB /* MenuController.swift */,
 				2D812A46256ED925003720B7 /* RunningController.swift */,
 				6FF85B21256EF3010082D9D7 /* FitnessController.swift */,
+				6F6618A6258395FF0000FDEE /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				2D320635257C621F00817BE4 /* WebServiceRequest.swift in Sources */,
 				2D67CF8D257BCD9200292EC3 /* ExerciceService.swift in Sources */,
 				2D67CF74257BC9CE00292EC3 /* Comment.swift in Sources */,
+				6F6618A7258395FF0000FDEE /* DetailViewController.swift in Sources */,
 				6F0DE2EF256D92BD000E25FB /* MenuController.swift in Sources */,
 				6FE982EC257A95C3003F7830 /* User.swift in Sources */,
 				6F0DE2E7256D882F000E25FB /* SignupDoneController.swift in Sources */,
