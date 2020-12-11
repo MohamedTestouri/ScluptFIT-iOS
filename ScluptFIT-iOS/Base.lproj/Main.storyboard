@@ -685,7 +685,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="v6r-fb-KxE"/>
                     <connections>
-                        <outlet property="exerciceLabel" destination="RCD-pq-tDU" id="0zG-pq-3p5"/>
+                        <outlet property="exerciceLabel" destination="RCD-pq-tDU" id="3Z0-PM-aaf"/>
                         <outlet property="exercieImage" destination="gLA-ha-xLP" id="Me1-nM-Zwc"/>
                     </connections>
                 </viewController>
@@ -1092,7 +1092,7 @@
         <!--Details View Controller-->
         <scene sceneID="QH6-f3-0Fi">
             <objects>
-                <viewController id="x8P-al-bZo" customClass="DetailsViewController" customModule="PetCenter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="x8P-al-bZo" customClass="DetailsViewController" customModule="ScluptFIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XEl-VX-Ids">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

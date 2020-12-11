@@ -88,9 +88,12 @@ class FitnessMenuController: UIViewController,UITableViewDataSource,UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let indexPath = sender as! IndexPath
+        let mail = arr_sortie_email[indexPath.row]
         let exercice = data[indexPath.row]
         let destination = segue.destination as! FitnessController
         destination.name = exercice
+        destination.email = mail
+        
     }
     
     var arr_sortie_email = [String]()

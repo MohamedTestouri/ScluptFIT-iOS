@@ -7,7 +7,7 @@ target 'ScluptFIT-iOS' do
   pod 'Alamofire'
   pod 'AlamofireObjectMapper', '~> 5.2'
 pod'SwiftyJSON'
-
+pod'Charts'
   # Pods for ScluptFIT-iOS
 
   target 'ScluptFIT-iOSTests' do
