@@ -10,6 +10,7 @@ import MapKit
 import CoreLocation
 import Alamofire
 import SwiftyJSON
+import Charts
 
 class MenuController: UIViewController {
 
@@ -22,14 +23,42 @@ class MenuController: UIViewController {
 }
 
 
-class HomeMenuController: UIViewController {
-
+class HomeMenuController: UIViewController, ChartViewDelegate{
+var distanceLineChart = LineChartView()
+    var stepsLineChart = LineChartView()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        distanceLineChart.delegate = self
+        stepsLineChart.delegate = self
+        
+        
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidLayoutSubviews(){
+        super.viewDidLayoutSubviews()
+        distanceLineChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
+        distanceLineChart.center = view.center
+        stepsLineChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
+        stepsLineChart.center = view.center
+        view.addSubview(distanceLineChart)
+        view.addSubview(stepsLineChart)
+        var entries = [ChartDataEntry]()
+        var entries2 = [ChartDataEntry]()
+        for x in 0..<10 {
+            entries.append(ChartDataEntry(x: Double(x), y: Double(x)))
+        }
+        for y in 8..<15 {
+            entries2.append(ChartDataEntry(x: Double(y), y: Double(y)))
+        }
+        let set = LineChartDataSet(entries : entries )
+        set.colors = ChartColorTemplates.material()
+        let data = LineChartData(dataSet : set)
+        let set2 = LineChartDataSet(entries : entries2 )
+               set2.colors = ChartColorTemplates.material()
+               let data2 = LineChartData(dataSet : set2)
+        stepsLineChart.data = data
+        distanceLineChart.data = data2
+    }
 }
 
 
@@ -269,16 +298,27 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell!
         
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    performSegue(withIdentifier: "detailsegue", sender: indexPath)
   
-        print(indexPath)
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailsegue", sender: indexPath)
     }
-   
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let indexPath = sender as! IndexPath
+        let date = arr_sortie_date[indexPath.row]
+        let idU = arr_sortie_id[indexPath.row]
+        let destination = segue.destination as! ForumController
+        destination.datee = date
+        destination.idUser = idU
+        
+    }
+
     var arr_sortie_name = [String]()
     var arr_sortie_date = [String]()
     var arr_sortie_text = [String]()
+    var arr_sortie_id = [String]()
+
     let URL_USER_SORTIE = "https://sclupt-fit.herokuapp.com/posts";
     
    /* override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -329,6 +369,8 @@ class ForumMenuController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.arr_sortie_name.append(sortie_name)
                         let sortie_date = i["date"].stringValue
                         self.arr_sortie_date.append(sortie_date)
+                        let sortie_id = i["_id"].stringValue
+                        self.arr_sortie_id.append(sortie_id)
                         
                     }
                     

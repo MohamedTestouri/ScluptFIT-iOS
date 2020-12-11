@@ -22,7 +22,8 @@ class FitnessController: UIViewController {
         // Do any additional setup after loading the view.
         exercieImage.image = UIImage(named: name!)
         exerciceLabel.text = email!
-        
+        print("email :")
+        print (email!)
         
         
         

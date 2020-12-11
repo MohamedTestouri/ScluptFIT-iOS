@@ -34,7 +34,9 @@
 		6F0DE2E1256D8791000E25FB /* SignupStep3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DE2E0256D8791000E25FB /* SignupStep3Controller.swift */; };
 		6F0DE2E7256D882F000E25FB /* SignupDoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DE2E6256D882F000E25FB /* SignupDoneController.swift */; };
 		6F0DE2EF256D92BD000E25FB /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DE2EE256D92BD000E25FB /* MenuController.swift */; };
-		6F6618A7258395FF0000FDEE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6618A6258395FF0000FDEE /* DetailViewController.swift */; };
+		6F6618C22583B6650000FDEE /* ForumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6618C12583B6650000FDEE /* ForumController.swift */; };
+		6F6618C72583BE1C0000FDEE /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6618C62583BE1C0000FDEE /* CommentController.swift */; };
+		6F6618CC2583CB270000FDEE /* sharedConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6618CB2583CB270000FDEE /* sharedConstant.swift */; };
 		6FE982EC257A95C3003F7830 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE982EB257A95C3003F7830 /* User.swift */; };
 		6FE982F7257BC622003F7830 /* HealthInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE982F6257BC622003F7830 /* HealthInformation.swift */; };
 		6FE98306257BCB26003F7830 /* Exercice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE98305257BCB26003F7830 /* Exercice.swift */; };
@@ -100,7 +102,9 @@
 		6F0DE2E0256D8791000E25FB /* SignupStep3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep3Controller.swift; sourceTree = "<group>"; };
 		6F0DE2E6256D882F000E25FB /* SignupDoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDoneController.swift; sourceTree = "<group>"; };
 		6F0DE2EE256D92BD000E25FB /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
-		6F6618A6258395FF0000FDEE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6F6618C12583B6650000FDEE /* ForumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumController.swift; sourceTree = "<group>"; };
+		6F6618C62583BE1C0000FDEE /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
+		6F6618CB2583CB270000FDEE /* sharedConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sharedConstant.swift; sourceTree = "<group>"; };
 		6FE982EB257A95C3003F7830 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6FE982F6257BC622003F7830 /* HealthInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInformation.swift; sourceTree = "<group>"; };
 		6FE98305257BCB26003F7830 /* Exercice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercice.swift; sourceTree = "<group>"; };
@@ -240,7 +244,8 @@
 				6F0DE2EE256D92BD000E25FB /* MenuController.swift */,
 				2D812A46256ED925003720B7 /* RunningController.swift */,
 				6FF85B21256EF3010082D9D7 /* FitnessController.swift */,
-				6F6618A6258395FF0000FDEE /* DetailViewController.swift */,
+				6F6618C12583B6650000FDEE /* ForumController.swift */,
+				6F6618C62583BE1C0000FDEE /* CommentController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				2D67CF6E257BC80F00292EC3 /* Post.swift */,
 				2D67CF73257BC9CE00292EC3 /* Comment.swift */,
 				2D814888257BD1D6006BCC60 /* Activity.swift */,
+				6F6618CB2583CB270000FDEE /* sharedConstant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -519,10 +525,10 @@
 				2D320635257C621F00817BE4 /* WebServiceRequest.swift in Sources */,
 				2D67CF8D257BCD9200292EC3 /* ExerciceService.swift in Sources */,
 				2D67CF74257BC9CE00292EC3 /* Comment.swift in Sources */,
-				6F6618A7258395FF0000FDEE /* DetailViewController.swift in Sources */,
 				6F0DE2EF256D92BD000E25FB /* MenuController.swift in Sources */,
 				6FE982EC257A95C3003F7830 /* User.swift in Sources */,
 				6F0DE2E7256D882F000E25FB /* SignupDoneController.swift in Sources */,
+				6F6618C22583B6650000FDEE /* ForumController.swift in Sources */,
 				2D812A47256ED925003720B7 /* RunningController.swift in Sources */,
 				6F0DE292256D4423000E25FB /* SceneDelegate.swift in Sources */,
 				118E98E7257C3B4B00AC8381 /* Run.swift in Sources */,
@@ -531,7 +537,9 @@
 				2D67CF6F257BC80F00292EC3 /* Post.swift in Sources */,
 				2D67CF83257BCD7100292EC3 /* UserService.swift in Sources */,
 				6FF85B22256EF3010082D9D7 /* FitnessController.swift in Sources */,
+				6F6618C72583BE1C0000FDEE /* CommentController.swift in Sources */,
 				2D67CF88257BCD8100292EC3 /* PostService.swift in Sources */,
+				6F6618CC2583CB270000FDEE /* sharedConstant.swift in Sources */,
 				6FE982F7257BC622003F7830 /* HealthInformation.swift in Sources */,
 				6F0DE2DC256D8773000E25FB /* SignupStep2Controller.swift in Sources */,
 				6F0DE2C9256D4CA3000E25FB /* LoginController.swift in Sources */,

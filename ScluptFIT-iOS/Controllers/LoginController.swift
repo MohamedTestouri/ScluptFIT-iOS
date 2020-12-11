@@ -14,7 +14,7 @@ class LoginController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    
+    var userid:Int?
  var userservice = UserService()
     var parameters : [String: Any] = [:]	
     var webServiceRequest = WebServiceRequest()
@@ -47,12 +47,14 @@ class LoginController: UIViewController,UITextFieldDelegate {
                     return
                 }
         
+
     //    guard let serverUrl = URL(string: "https://scluptfit.herokuapp.com/users/login") else { return }
         
        // guard let serverUrl2 = URL(string: "http://sclupt-fit.herokuapp.com/posts") else { return }
 
 
-        
+        sharedConstant.userid = self.userid
+        print(sharedConstant.userid)
 
         var user : User = User(email: email , password: password)
         self.userservice.login(user: user)

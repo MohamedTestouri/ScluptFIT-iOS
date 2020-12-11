@@ -785,15 +785,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="402" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PxS-Bt-1hd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PxS-Bt-1hd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mcell" rowHeight="402" id="NA1-gW-b4f">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="402"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mcell" rowHeight="400" id="NA1-gW-b4f">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NA1-gW-b4f" id="fIO-eq-Q3l">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="402"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mouSalah" translatesAutoresizingMaskIntoConstraints="NO" id="Ik4-Hf-Rta">
@@ -1089,10 +1089,10 @@
             </objects>
             <point key="canvasLocation" x="1760" y="1710"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Forum Controller-->
         <scene sceneID="QH6-f3-0Fi">
             <objects>
-                <viewController id="x8P-al-bZo" customClass="DetailsViewController" customModule="ScluptFIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="x8P-al-bZo" customClass="ForumController" customModule="ScluptFIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XEl-VX-Ids">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1135,9 +1135,12 @@
                                 <color key="backgroundColor" red="0.82745098039999998" green="0.83921568629999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-jm-tpD">
-                                <rect key="frame" x="20" y="492" width="36" height="37"/>
+                                <rect key="frame" x="22" y="495" width="65" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="comments"/>
+                                <state key="normal" image="ic_forum"/>
+                                <connections>
+                                    <segue destination="Vfy-4y-FLX" kind="show" id="nSd-Lh-A4x"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Css-zM-rEk">
                                 <rect key="frame" x="-5" y="539" width="414" height="6"/>
@@ -1150,23 +1153,72 @@
                     </view>
                     <navigationItem key="navigationItem" id="uUN-s6-ycG"/>
                     <connections>
-                        <outlet property="descriptionAn" destination="0TS-xZ-RWD" id="XLu-y7-QUa"/>
+                        <outlet property="date" destination="JH2-hT-91J" id="t7c-eM-w1O"/>
+                        <outlet property="photo" destination="mmn-aA-HnP" id="7ye-td-shE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuH-Rc-M9T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834.78260869565224" y="2310.9375"/>
+            <point key="canvasLocation" x="834.78260869565224" y="2310.326086956522"/>
+        </scene>
+        <!--Comment Controller-->
+        <scene sceneID="L3a-BK-XH3">
+            <objects>
+                <viewController id="Vfy-4y-FLX" customClass="CommentController" customModule="ScluptFIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qxV-5S-TyH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ht1-TY-ffY">
+                                <rect key="frame" x="20" y="20" width="275" height="34"/>
+                                <color key="backgroundColor" name="Color Secondary"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8B-9P-YOd">
+                                <rect key="frame" x="319" y="20" width="75" height="34"/>
+                                <color key="backgroundColor" name="Color Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="3nG-5x-ePD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddComment:" destination="Vfy-4y-FLX" eventType="touchUpInside" id="zSq-m5-hVa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rSI-hK-91l"/>
+                        <color key="backgroundColor" name="Color Background"/>
+                        <constraints>
+                            <constraint firstItem="ht1-TY-ffY" firstAttribute="bottom" secondItem="Y8B-9P-YOd" secondAttribute="bottom" id="4J5-9c-KvP"/>
+                            <constraint firstItem="ht1-TY-ffY" firstAttribute="top" secondItem="Y8B-9P-YOd" secondAttribute="top" id="5hd-z2-JNX"/>
+                            <constraint firstItem="ht1-TY-ffY" firstAttribute="leading" secondItem="qxV-5S-TyH" secondAttribute="leadingMargin" id="6DR-33-mxh"/>
+                            <constraint firstItem="Y8B-9P-YOd" firstAttribute="trailing" secondItem="qxV-5S-TyH" secondAttribute="trailingMargin" id="cVo-yb-kLU"/>
+                            <constraint firstItem="ht1-TY-ffY" firstAttribute="top" secondItem="rSI-hK-91l" secondAttribute="top" constant="20" id="lvT-xq-nFw"/>
+                            <constraint firstItem="Y8B-9P-YOd" firstAttribute="leading" secondItem="ht1-TY-ffY" secondAttribute="trailing" constant="24" id="qxt-Vw-fgJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1sP-Bg-MHG"/>
+                    <connections>
+                        <outlet property="commentText" destination="ht1-TY-ffY" id="uNU-o5-RDD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pkp-g9-U2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834.78260869565224" y="3071.739130434783"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lqd-0e-lKN"/>
+        <segue reference="TKu-tS-Vkg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Asset 4@sf" width="2244" height="572"/>
         <image name="Logo" width="2244" height="2312"/>
         <image name="backgroud" width="491" height="736"/>
         <image name="background secondary" width="1366" height="2048"/>
-        <image name="comments" width="452" height="452"/>
         <image name="ic_edit_orange" width="18" height="18"/>
         <image name="ic_fitness" width="32" height="32"/>
         <image name="ic_forum" width="32" height="32"/>
